@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ConversationActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+
+        <Button
+            android:id="@+id/sendBtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_send_blue"
+            android:layout_gravity="end"
+            android:layout_margin="5dp"
+            android:onClick="onClickSent"
+             />
+
+        <EditText
+
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:autofillHints="true"
+            android:hint="Message"
+            android:inputType="textLongMessage"
+            android:lines="1"
+            android:maxLines="3"
+            android:textSize="25sp"
+            android:layout_marginRight="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <Button
+        android:layout_gravity="start"
+        android:id="@+id/closeSearchModeBtn"
+
+
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_left_arrow"
+        android:onClick="onClickBack"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/profilPicture"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_user"
+            android:contentDescription="Image du groupe"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom Du Groupe"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/profilPicture"
+
+            android:layout_centerVertical="true"
+
+            />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/ic_setting"
+        android:onClick="onClickSettings"
+        android:layout_gravity="end"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_message_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_gravity="center"
+
+        android:background="@color/color_chat"
+
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="70dp"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

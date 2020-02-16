@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/allPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity"
+    android:animateLayoutChanges="true"
+    >
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/fragment_map"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center" />
+
+
+    <RelativeLayout
+
+        android:id="@+id/txtInpLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom|end"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="30dp"
+
+        android:padding="10dp"
+
+        android:background="@drawable/ic_menu_background"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/searchModeLay"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:layout_below="@+id/inputTxtLay"
+            android:visibility="gone"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/selectGroupBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="Groupe"
+
+                    android:onClick="onSelectType"/>
+
+                <Button
+                    android:id="@+id/selectEventBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="Event"
+
+                    android:onClick="onSelectType"/>
+
+                <Button
+                    android:id="@+id/selectUserBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Personne"
+
+                    android:onClick="onSelectType"/>
+            </LinearLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+                <LinearLayout
+                    android:id="@+id/entityContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:animateLayoutChanges="true">
+
+                </LinearLayout>
+            </ScrollView>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/inputTxtLay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textColorHint="@color/colorAccent"
+            android:gravity="bottom"
+
+            >
+
+            <Button
+                android:id="@+id/searchBtnForSearchMode"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_search"
+                android:onClick="openSearchMode"
+                android:visibility="visible"/>
+
+            <Button
+                android:id="@+id/closeSearchModeBtn"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:background="@drawable/ic_left_arrow"
+                android:onClick="closeSearchMode"
+                android:visibility="gone"/>
+
+
+            <EditText
+                android:id="@+id/inputTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rechercher"
+                android:ems="10"
+                android:textSize="20sp"
+                android:drawableLeft="@drawable/ic_search"
+
+                android:drawableStart="@drawable/ic_search"
+                android:inputType="textPersonName"
+                android:visibility="gone"/>
+
+
+           <!-- <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColorHint="@color/colorAccent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Rechercher"
+                    android:ems="10"
+                    android:textSize="20sp"
+                    android:drawableLeft="@drawable/ic_search"
+
+                    android:drawableStart="@drawable/ic_search"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>-->
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top|start"
+        android:layout_margin="16dp"
+        android:background="@drawable/ic_menu_button"
+        android:onClick="showMenu" />
+
+    <LinearLayout
+        android:id="@+id/leftBtnLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/account"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_margin="16dp"
+            android:onClick="startAccountActivity" />
+
+        <Button
+            android:id="@+id/message"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_margin="16dp"
+            />
+
+        <Button
+            android:id="@+id/markerPlus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_location_btn"
+            />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+
+       android:visibility="gone">
+
+        <FrameLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_list_menu_background"
+            android:animateLayoutChanges="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:nextFocusRight="@id/menu"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:paddingTop="82dp"
+                android:id="@+id/mainMenu"
+                android:paddingLeft="25dp"
+                android:paddingRight="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="showMenu"
+                    android:text="Menu"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawableEnd="@drawable/ic_right_arrow"
+                    android:text="Groupe"
+                    android:textSize="20sp"
+                    android:onClick="showGroupeMenu"/>
+
+                <TextView
+                    android:id="@+id/profilBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profil"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:onClick="startAccountActivity"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Evenement"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawableEnd="@drawable/ic_right_arrow"
+                    android:onClick="showEventMenu"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parametres"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawableEnd="@drawable/ic_right_arrow"
+                    android:onClick="showSettingMenu"/>
+
+                <TextView
+                    android:id="@+id/disconnectBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deconnexion"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:onClick="onClickDisconnectFromMenu"/>
+
+            </LinearLayout>
+            <include
+                android:id="@+id/groupMenu"
+                layout="@layout/group_menu"
+                app:layout_anchor="@+id/include"
+                android:visibility="gone"/>
+            <include
+                android:id="@+id/eventMenu"
+                layout="@layout/event_menu"
+                app:layout_anchor="@+id/include"
+                android:visibility="gone"/>
+            <include
+                android:id="@+id/settingMenu"
+                layout="@layout/setting_menu"
+                app:layout_anchor="@+id/include"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/seekBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="66dp"
+        android:layout_marginRight="66dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center|top"
+
+        android:orientation="vertical">
+
+
+    <SeekBar
+        android:id="@+id/seekBarDate"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+
+        android:max="4"
+        android:progress="2"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:thumb="@drawable/ic_clock"
+        />
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

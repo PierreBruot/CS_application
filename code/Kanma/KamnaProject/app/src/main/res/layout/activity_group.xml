@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".view.GroupActivity"
+
+android:padding="16dp"
+    >
+
+<Button
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+
+    android:background="@drawable/ic_location"
+    android:layout_gravity="start"
+
+    android:onClick="startMainPage"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+
+        android:background="@drawable/ic_calendar"
+        android:onClick="startCalendar"
+        />
+
+    <Button
+        android:id="@+id/joinBtn"
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+
+        android:background="@drawable/ic_add_member"
+        android:onClick="sendJoinRequest"
+        />
+
+    <Button
+        android:id="@+id/leaveBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+
+        android:background="@drawable/ic_leave"
+        android:onClick="sendLeaveRequest"
+        android:visibility="gone"
+        />
+    </LinearLayout>
+
+<Button
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+
+    android:background="@drawable/ic_members_list"
+    android:layout_gravity="end"
+
+    android:onClick="startMemberList"/>
+
+<LinearLayout
+
+    android:layout_marginTop="66dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="top|center">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/ConsultGroupLogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@android:drawable/sym_def_app_icon"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:id="@+id/ConsultGroupName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Nom du groupe" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal|end"
+            android:background="@drawable/ic_message" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnSetDesc"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+
+            android:layout_gravity="end"
+
+            android:background="@drawable/ic_setting"
+
+            android:onClick="editDesc"
+
+            android:visibility="gone"
+            />
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/ConsultGroupDesc"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description "
+
+            />
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/txtNoConversation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="20sp"
+        android:text="Erreur"
+        android:visibility="gone"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

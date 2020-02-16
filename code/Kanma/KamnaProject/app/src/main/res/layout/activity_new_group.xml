@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    tools:context=".view.NewGroupActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    android:id="@+id/mainFragment"
+android:padding="16dp"
+    >
+
+<Button
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+
+    android:background="@drawable/ic_location"
+    android:layout_gravity="start"
+
+    android:onClick="startMainPage"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:background="@drawable/ic_validate"
+        android:layout_gravity="end"
+
+        android:onClick="validate"/>
+
+
+<LinearLayout
+    android:layout_marginTop="66dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="top|center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="Creer un groupe pour pouvoir publier des evenements public ou de groupe. Inviter uniquement les organisateur de votre groupe ou vos amis. Vous etes par defaut administrateur du groupe et vous pouvez l'editer à tous moment."/>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/editGroupLogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_camera_plus"
+            android:layout_gravity="start"
+            android:layout_marginEnd="16dp"
+            android:onClick="changePicture"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColorHint="@color/colorAccent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editGroupName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nom du groupe"
+                android:inputType="textPersonName"
+                android:maxWidth="300dp"
+                android:minWidth="180sp"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_add_member"
+            android:text="Inviter"
+            android:drawableEnd="@drawable/ic_add_member"
+            android:layout_marginBottom="16dp"
+
+            android:onClick="addPerson"/>
+
+        <LinearLayout
+            android:id="@+id/listeInvit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editer la description :"
+            android:textSize="20sp"/>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <EditText
+                android:id="@+id/editDesc"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textLongMessage"
+                android:textSize="20sp"
+                />
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <include
+        android:id="@+id/searchUserModeFragment"
+        layout="@layout/fragment_search_users"
+        android:visibility="gone"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

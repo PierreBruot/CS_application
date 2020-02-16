@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainFragment">
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_margin="16dp"
+        android:background="@drawable/ic_location"
+        android:layout_gravity="start"
+
+        android:onClick="startMainPage"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="82dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
+
+
+
+        <LinearLayout
+            android:id="@+id/form"
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/editEventLogo"
+                android:layout_width="match_parent"
+                android:layout_height="161dp"
+                android:src="@drawable/ic_camera_plus"
+                android:onClick="changePicture"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Publier par " />
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="moi-même" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnChooseAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onClickChooseAuthor"
+                android:text="Publier avec un de mes groupes"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColorHint="@color/colorAccent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titleField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Title"
+                    android:inputType="textPersonName"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:id="@+id/dateTextLay"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    android:background="@drawable/ic_calendar"/>
+                <TextView
+                    android:id="@+id/dateField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="showTheMap"
+                    android:background="@drawable/ic_location"/>
+                <!--TODO background-->
+                <TextView
+                    android:id="@+id/locationField"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lieu"
+                    />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/layChooseVisibility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visibilité de l'evenement :"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/visibilityPublic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Public" />
+
+                    <RadioButton
+                        android:id="@+id/visibilityCustom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Custom" />
+                </RadioGroup>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Liste des invités:"/>
+
+            <Button
+                android:id="@+id/addUser"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_add"
+                android:onClick="addPerson"/>
+                <!-- OU ADD_MEMBER !!!!!!!!-->
+
+            <LinearLayout
+                android:id="@+id/listeInvit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="82dp">
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+        <Button
+            android:id="@+id/btnValidate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="bottom"
+            android:text="Valider"
+            android:onClick="onClickCreateEvent"
+            />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/addOnMapForm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/ic_list_menu_background"
+
+        android:padding="16dp"
+
+        android:visibility="gone"
+        >
+
+        <Button
+            android:layout_gravity="start"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_validate"
+            android:onClick="onClicValidMap"/>
+
+        <Button
+            android:layout_gravity="end"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_cross"
+            android:onClick="onClicCancelMap"
+            />
+
+
+        <include
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/include"
+
+            layout="@layout/fragment_map"
+
+            app:layout_anchor="@+id/include"
+            app:layout_anchorGravity="center"
+
+            android:layout_marginTop="66dp"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <include
+        android:id="@+id/searchUserModeFragment"
+        layout="@layout/fragment_search_users"
+        android:visibility="gone"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

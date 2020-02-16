@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Kanma</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Event">Event</string>
+    <string name="user">user</string>
+    <string name="menu">menu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mainService">mainService</string>
+    <string name="groupe">Groupe</string>
+</resources>
