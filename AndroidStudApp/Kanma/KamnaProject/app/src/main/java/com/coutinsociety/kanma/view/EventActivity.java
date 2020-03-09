@@ -24,7 +24,7 @@ public class EventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         event = EventData.findEventsById(getIntent().getIntExtra("Event",-1));
-        if (event == null) Toast.makeText(this,"erreur lors du chargement: "+getIntent().getIntExtra("Event",-1),Toast.LENGTH_SHORT).show();
+        if (event == null) Toast.makeText(this, R.string.loading_error + getIntent().getIntExtra("Event",-1),Toast.LENGTH_SHORT).show();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);

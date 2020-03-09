@@ -26,7 +26,7 @@ public class ConversationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         conversation = ConversationData.findConversationById(getIntent().getIntExtra("Conversation",-1));
-        if (conversation == null) Toast.makeText(this,"erreur lors du chargement",Toast.LENGTH_SHORT).show();
+        if (conversation == null) Toast.makeText(this, R.string.loading_error,Toast.LENGTH_SHORT).show();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation);

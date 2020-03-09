@@ -30,7 +30,7 @@ android:paddingTop="8dp">
 
 <TextView
     android:id="@+id/text_message_body"
-    android:text="hi man, how are you?"
+    android:text="@string/hi_man_how_are_you"
     android:background="@drawable/message_received_background"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

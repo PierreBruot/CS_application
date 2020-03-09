@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="16dp"
-            android:text="Choose"
+            android:text="@string/choose"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Camera"
+                android:text="@string/camera"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Gallery"
+                android:text="@string/gallery"
                 android:textColor="#FFFFFF"
                 android:textSize="18dp" />
         </LinearLayout>

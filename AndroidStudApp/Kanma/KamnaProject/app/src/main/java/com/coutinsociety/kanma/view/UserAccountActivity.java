@@ -161,13 +161,13 @@ public class UserAccountActivity extends AppCompatActivity {
 
                             }
 
-                            else Toast.makeText(getBaseContext(),"Login ou mot de passe incorrect",Toast.LENGTH_LONG).show();
+                            else Toast.makeText(getBaseContext(), R.string.login_or_password_invalid,Toast.LENGTH_LONG).show();
                         }
 
                     }
                 });
 
-            }else Toast.makeText(this,"Le nom d'utilisateur et le mot de passe sont obligatoires",Toast.LENGTH_LONG).show();
+            }else Toast.makeText(this, R.string.name_and_password_required,Toast.LENGTH_LONG).show();
 
         }
 
@@ -243,10 +243,10 @@ public class UserAccountActivity extends AppCompatActivity {
                 }).start();
 
             }else
-                Toast.makeText(this, "les mots de passes ne correspondent pas", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.passwords_do_not_match, Toast.LENGTH_LONG).show();
 
         }else{
-            Toast.makeText(this, "Remplissez tous les champ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.fill_in_all_fields, Toast.LENGTH_LONG).show();
             Log.d("Valeur des champ",userPseudo+" "+userNom+" "+userPrenom+" "+password+" "+genre);
 
         }
@@ -264,7 +264,7 @@ public class UserAccountActivity extends AppCompatActivity {
             startMainPage();
         }
         else
-            Toast.makeText(this, "Vous avez rencontré une erreur, verifiez votre connexion ou reesayez dans quelques temps", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.error_check_your_connection_or_retry_later, Toast.LENGTH_LONG).show();
     }
 
     public void onClickBackButton(View view){
@@ -474,7 +474,7 @@ public class UserAccountActivity extends AppCompatActivity {
                     UserData.setPicture(newPicture);
                 }
                 else{
-                    Toast.makeText(getBaseContext(),"erreur",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), R.string.error,Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -494,7 +494,7 @@ public class UserAccountActivity extends AppCompatActivity {
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ChoosePicture.fromGallery(this);
             } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permission_denied,Toast.LENGTH_SHORT).show();
             }
         } else if (requestCode == 402) {
             if (grantResults.length == 0 || grantResults == null) {
@@ -502,7 +502,7 @@ public class UserAccountActivity extends AppCompatActivity {
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ChoosePicture.fromCamera(this);
             } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permission_denied,Toast.LENGTH_SHORT).show();
             }
         }
     }

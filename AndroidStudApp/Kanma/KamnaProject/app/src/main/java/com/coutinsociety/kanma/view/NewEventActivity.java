@@ -471,7 +471,7 @@ public class NewEventActivity extends AppCompatActivity implements SearchUserBox
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ChoosePicture.fromGallery(this);
             } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permission_denied,Toast.LENGTH_SHORT).show();
             }
         } else if (requestCode == 402) {
             if (grantResults.length == 0 || grantResults == null) {
@@ -479,7 +479,7 @@ public class NewEventActivity extends AppCompatActivity implements SearchUserBox
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ChoosePicture.fromCamera(this);
             } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permission_denied,Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -17,7 +17,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You are not connecting to internet"
+        android:text="@string/you_are_not_connecting_to_internet"
 
          />
     </LinearLayout>

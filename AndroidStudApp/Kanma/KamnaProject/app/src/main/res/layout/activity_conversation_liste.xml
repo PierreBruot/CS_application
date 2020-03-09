@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="20sp"
-            android:text="Vous n'avez pas encore de conversation"
+            android:text="@string/vous_n_avez_pas_encore_de_conversation"
             android:visibility="gone"/>
 
 

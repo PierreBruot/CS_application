@@ -185,7 +185,7 @@ public class NewConversationActivity extends AppCompatActivity {
 
                 }
             }
-            else Toast.makeText(this,"Aucun element trouve",Toast.LENGTH_SHORT).show();
+            else Toast.makeText(this, R.string.element_not_found,Toast.LENGTH_SHORT).show();
         }
     }
 

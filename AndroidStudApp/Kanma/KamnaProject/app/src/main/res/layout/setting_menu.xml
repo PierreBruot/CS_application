@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:onClick="returnMainMenu"
             android:tag="@+id/include"
-            android:text="Parametres"
+            android:text="@string/parametres"
             android:textSize="35sp"
             android:textStyle="bold"
             android:drawableLeft="@drawable/ic_left_arrow"
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Aide"
+            android:text="@string/aide"
             android:layout_margin="10dp"
             />
 
@@ -44,15 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Politique de confidientialite"
-            android:layout_margin="10dp"
-            android:textSize="20sp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Langues"
+            android:text="@string/politique_de_confidientialite"
             android:layout_margin="10dp"
             android:textSize="20sp"
             />
@@ -60,7 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Conditions general d utilisation"
+            android:text="@string/langues"
             android:layout_margin="10dp"
             android:textSize="20sp"
             />
@@ -68,7 +60,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nous contacter"
+            android:text="@string/conditions_general_d_utilisation"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nous_contacter"
             android:layout_margin="10dp"
             android:textSize="20sp"
             />

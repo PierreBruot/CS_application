@@ -52,7 +52,7 @@
 
                     android:src="@mipmap/ic_launcher"
 
-                    android:contentDescription="Image event"
+                    android:contentDescription="@string/image_event"
                     />
                 <ImageView
                     android:id="@+id/eventGroupPicture"
@@ -136,7 +136,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
 
-                android:text="Titre de l'event"
+                android:text="@string/titre_de_l_event"
                 android:textSize="20sp"/>
 
 
@@ -149,7 +149,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
 
-                android:text="10 Adresse de l'event,91300"
+                android:text="@string/_10_adresse_de_l_event_91300"
                 android:textSize="20sp"
 
                 android:onClick="openLocationOnMap"
@@ -167,7 +167,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
 
-                android:text="19h30, 06/30/2020"
+                android:text="@string/_19h30_06_30_2020"
                 android:textSize="20sp"
 
                 android:onClick="openDateOnCalendar"
@@ -185,7 +185,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
 
-                android:text="Reserver son billet: 100€"
+                android:text="@string/reserver_son_billet_100"
                 android:textSize="20sp"
 
                 android:onClick="openByTicket"
@@ -198,14 +198,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:text="Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description "
+                android:text="@string/description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description"
 
                 />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proposer un covoiturage"
+                android:text="@string/proposer_un_covoiturage"
 
                 android:drawableRight="@drawable/ic_car"
                 android:drawableEnd="@drawable/ic_car"

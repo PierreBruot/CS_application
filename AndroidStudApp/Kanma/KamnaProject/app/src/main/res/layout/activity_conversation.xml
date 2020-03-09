@@ -30,7 +30,7 @@
             android:layout_height="60dp"
 
             android:autofillHints="true"
-            android:hint="Message"
+            android:hint="@string/message"
             android:inputType="textLongMessage"
             android:lines="1"
             android:maxLines="3"
@@ -73,13 +73,13 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_user"
-            android:contentDescription="Image du groupe"
+            android:contentDescription="@string/image_du_groupe"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nom Du Groupe"
+            android:text="@string/nom_du_groupe"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/profilPicture"
 
