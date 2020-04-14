@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addOnMapForm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@drawable/ic_list_menu_background"
+
+    android:padding="16dp">
+
+        <Button
+            android:layout_gravity="start"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_validate"
+            android:onClick="onClicValidMap"/>
+
+        <Button
+            android:layout_gravity="end"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_cross"
+            android:onClick="onClicCancelMap"
+            />
+
+        <TextView
+            android:id="@+id/selectedAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="66dp"
+
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:layout_gravity="top|center"
+            android:onClick="changeResearch"
+            android:visibility="gone"/>
+
+        <LinearLayout
+
+            android:layout_marginTop="66dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addressSearchModeTxtInLay"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColorHint="@color/colorAccent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressInputTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawableLeft="@drawable/ic_search"
+                    android:ems="10"
+                    android:hint="Rechercher un Lieu"
+
+                    android:inputType="textPersonName"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ScrollView
+                android:id="@+id/addressSearchModeLay"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:id="@+id/addressContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+            </ScrollView>
+        </LinearLayout>
+
+
+        <include
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/include"
+
+            layout="@layout/fragment_map"
+
+            app:layout_anchor="@+id/include"
+            app:layout_anchorGravity="center"
+
+            android:layout_marginTop="116dp"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

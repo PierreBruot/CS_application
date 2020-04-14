@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -33,16 +35,23 @@ import com.coutinsociety.kanma.factory.fromJSON.EventFactoryFromJSON;
 import com.coutinsociety.kanma.factory.toJSON.EventFactory;
 import com.coutinsociety.kanma.staticVar.internData.EventData;
 import com.coutinsociety.kanma.utils.ChoosePicture;
+import com.coutinsociety.kanma.utils.LocAPI.HTTP_For_Loc_API;
+import com.coutinsociety.kanma.view.searcherBox.SearchAddressBox;
 import com.coutinsociety.kanma.view.searcherBox.SearchUserBox;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -52,7 +61,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
 
-public class NewEventActivity extends AppCompatActivity implements SearchUserBox, OnMapReadyCallback {
+public class NewEventActivity extends AppCompatActivity implements SearchUserBox, SearchAddressBox {
 
     private static final String TAG = "NewEventAct";
     private Timer timerOnSearch;
@@ -61,14 +70,12 @@ public class NewEventActivity extends AppCompatActivity implements SearchUserBox
     private ArrayList<Entity> userEntities =new ArrayList<>();
     private ArrayList<Integer> selectedUsersId=new ArrayList<>();
     private TextInputEditText userInputTxt;
-    private LinearLayout inputTxtContainer;
     private boolean keyBoardmode=false;
     private boolean userSearchMode =false;
 
     //To create event
     private String eventTitle;
-    private String eventAdress;
-    private LatLng eventLocation;
+    private String eventAdress;private LatLng eventLocation;
     private Date eventDate;private Calendar date;
     private int groupeOwnerId;
     private String visibility;
@@ -82,16 +89,23 @@ public class NewEventActivity extends AppCompatActivity implements SearchUserBox
 
     //For the map
     private Marker marker;
-    private SupportMapFragment mapFragment;
+
+    private GoogleMap mMap;
+    private String lastSelectedAddress;
+    private TextInputEditText addressInputTxt;
+    private ViewGroup layAddress;
+    private ArrayList<Lieu> addressEntity;
+    private boolean addressSearchMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event);
-        //Map
-        mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+
+        getSupportFragmentManager();
+
+        addSearchAddressBox();
+        addSearchUserBox();
         addUI();
     }
 
@@ -105,7 +119,7 @@ public class NewEventActivity extends AppCompatActivity implements SearchUserBox
             }
         });
 
-        addSearchUserBox();
+
     }
 
     public void startMainPage(View view) {
@@ -221,60 +235,107 @@ public class NewEventActivity extends AppCompatActivity implements SearchUserBox
 
 
     //////////////////////////////////////Map Fragment////////////////////////////////////////////////
-    public void showTheMap(View view) {
-        this.findViewById(R.id.form).setVisibility(View.GONE);
-        this.findViewById(R.id.addOnMapForm).setVisibility(View.VISIBLE);
+
+
+    @Override
+    public void setAddressInputTxt(TextInputEditText viewById) {
+        addressInputTxt=viewById;
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-        Log.d("AddOnMap","ready");
-        //TODO
-        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-            @Override
-            public void onMapClick(LatLng latLng) {
-                Log.d("AddOnMap","clic");
-                if(marker!=null){
-                    marker.remove();
-                }
-                MarkerOptions options=new MarkerOptions();
-                options.position(latLng);
-                marker= googleMap.addMarker(options);
-                marker.setDraggable(true);
-                //TODO update Adress here
-            }
-        });
-        /*
-        googleMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
-            @Override
-            public void onMarkerDragStart(Marker marker) {
-
-            }
-
-            @Override
-            public void onMarkerDrag(Marker marker) {
-
-            }
-
-            @Override
-            public void onMarkerDragEnd(Marker marker) {
-                //TODO update Adress here
-            }
-        });*/
+    public TextView getAddressInputTxt() {
+        return addressInputTxt;
     }
 
-    public void onClicValidMap(View view) {
-        eventLocation=marker.getPosition();
-        //TODO change for adress
-        ((TextView)findViewById(R.id.locationField)).setText(eventLocation.toString());
-        onClicCancelMap(view);
-    }
-    public void onClicCancelMap(View view) {
-
-        this.findViewById(R.id.addOnMapForm).setVisibility(View.GONE);
-        this.findViewById(R.id.form).setVisibility(View.VISIBLE);
+    @Override
+    public ViewGroup getLayAddress() {
+        return layAddress;
     }
 
+    @Override
+    public void setLayAddress(ViewGroup viewById) {
+        layAddress=viewById;
+    }
+
+    @Override
+    public ArrayList<Lieu> getAddressEntity() {
+        return addressEntity;
+    }
+
+    @Override
+    public void setAddressEntity(ArrayList<Lieu> searchedEntity) {
+        addressEntity=searchedEntity;
+    }
+
+    @Override
+    public void setAddressSearchMode(boolean b) {
+        addressSearchMode=b;
+    }
+
+    @Override
+    public boolean getAddressSearchMode() {
+        return addressSearchMode;
+    }
+
+    @Override
+    public void setAddressSearchPageIsDisplay(boolean b) {
+
+    }
+
+    @Override
+    public boolean addressSearchPageIsDisplay() {
+        return false;
+    }
+
+    @Override
+    public void setMap(GoogleMap googleMap) {
+        mMap=googleMap;
+    }
+
+    @Override
+    public GoogleMap getMap() {
+        return mMap;
+    }
+
+    @Override
+    public Marker getMarker() {
+        return marker;
+    }
+
+    @Override
+    public void setMarker(Marker addMarker) {
+        marker=addMarker;
+    }
+
+    @Override
+    public String getEventAddress() {
+        return eventAdress;
+    }
+
+    @Override
+    public void setEventAddress(String address) {
+        eventAdress=address;
+    }
+
+    @Override
+    public LatLng getEventLocation() {
+        return eventLocation;
+    }
+
+    @Override
+    public void setEventLocation(LatLng position) {
+        eventLocation=position;
+    }
+
+    @Override
+    public String getLastSelectedAddress() {
+        return lastSelectedAddress;
+    }
+
+    @Override
+    public void setLastSelectedAddress(String name) {
+        lastSelectedAddress=name;
+    }
 
     /////////////////////////////////////////////SearchUserBox////////////////////////////////////////////
     @Override
@@ -483,4 +544,5 @@ public class NewEventActivity extends AppCompatActivity implements SearchUserBox
             }
         }
     }
+
 }

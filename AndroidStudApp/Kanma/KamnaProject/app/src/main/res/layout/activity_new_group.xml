@@ -14,14 +14,14 @@ android:layout_height="match_parent"
 android:padding="16dp"
     >
 
-<Button
-    android:layout_width="50dp"
-    android:layout_height="50dp"
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
 
-    android:background="@drawable/ic_location"
-    android:layout_gravity="start"
+        android:background="@drawable/ic_location"
+        android:layout_gravity="start"
 
-    android:onClick="startMainPage"/>
+        android:onClick="startMainPage"/>
 
     <Button
         android:layout_width="50dp"

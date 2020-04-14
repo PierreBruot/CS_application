@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -35,9 +37,11 @@ import com.coutinsociety.kanma.factory.fromJSON.GroupFactoryFromJSON;
 import com.coutinsociety.kanma.factory.toJSON.GroupFactory;
 import com.coutinsociety.kanma.staticVar.internData.GroupData;
 import com.coutinsociety.kanma.utils.ChoosePicture;
+import com.coutinsociety.kanma.utils.LocAPI.HTTP_For_Loc_API;
 import com.coutinsociety.kanma.view.searcherBox.SearchUserBox;
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -369,4 +373,6 @@ public class NewGroupActivity extends AppCompatActivity implements SearchUserBox
         ((LinearLayout)findViewById(R.id.listeInvit)).removeAllViews();
         onClickBackFromUser();
     }
+
+
 }

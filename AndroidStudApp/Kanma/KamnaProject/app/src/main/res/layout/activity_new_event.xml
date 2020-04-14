@@ -116,7 +116,7 @@
                 <Button
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:onClick="showTheMap"
+                    android:onClick="addAddress"
                     android:background="@drawable/ic_location"/>
                 <!--TODO background-->
                 <TextView
@@ -200,51 +200,11 @@
             />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/addOnMapForm"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:background="@drawable/ic_list_menu_background"
-
-        android:padding="16dp"
-
+    <include
+        android:id="@+id/searchAddressModeFragment"
+        layout="@layout/fragment_search_address"
         android:visibility="gone"
-        >
-
-        <Button
-            android:layout_gravity="start"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/ic_validate"
-            android:onClick="onClicValidMap"/>
-
-        <Button
-            android:layout_gravity="end"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/ic_cross"
-            android:onClick="onClicCancelMap"
-            />
-
-
-        <include
-            android:layout_gravity="center"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:id="@+id/include"
-
-            layout="@layout/fragment_map"
-
-            app:layout_anchor="@+id/include"
-            app:layout_anchorGravity="center"
-
-            android:layout_marginTop="66dp"
-            />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        />
 
     <include
         android:id="@+id/searchUserModeFragment"
