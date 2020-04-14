@@ -27,7 +27,7 @@ public class GroupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_group);
 
         group = GroupData.findGrouById(getIntent().getIntExtra("Group",-1));
-        if (group == null) Toast.makeText(this,"erreur lors du chargement",Toast.LENGTH_SHORT).show();
+        if (group == null) Toast.makeText(this, R.string.loading_error,Toast.LENGTH_SHORT).show();
         else {
        // Log.d("RecyclerView","onCreate");
         ((TextView)findViewById(R.id.ConsultGroupName)).setText(group.getTitle());

@@ -22,7 +22,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Choix du nom d'utilisateur"
+                android:hint="@string/choix_du_nom_d_utilisateur"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textSize="20sp"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nom"
+            android:hint="@string/nom"
             android:inputType="textPersonName"
             android:textSize="20sp" />
 
@@ -58,7 +58,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Prenom"
+            android:hint="@string/prenom"
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="20sp"
@@ -76,7 +76,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Choix mot de passe"
+            android:hint="@string/choix_mot_de_passe"
             android:ems="10"
             android:inputType="textPassword"
             android:textSize="20sp"
@@ -94,7 +94,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirmer votre mot de passe"
+            android:hint="@string/confirmer_votre_mot_de_passe"
             android:ems="10"
             android:inputType="textPassword"
             android:textSize="20sp"
@@ -111,7 +111,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Genre : "
+            android:text="@string/genre"
             android:textSize="20sp"
             android:textStyle="bold|italic" />
 
@@ -120,21 +120,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Femme" />
+            android:text="@string/femme" />
 
         <RadioButton
             android:id="@+id/checkHomme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Homme" />
+            android:text="@string/homme" />
     </RadioGroup>
 
     <Button
         android:id="@+id/signUpBtnInscription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:onClick="onClickInscription"
         />
 
@@ -142,7 +142,7 @@
         android:id="@+id/signUpBtnRetourSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Retour"
+        android:text="@string/retour"
         android:onClick="onClickBackButton"/>
 
 </LinearLayout>

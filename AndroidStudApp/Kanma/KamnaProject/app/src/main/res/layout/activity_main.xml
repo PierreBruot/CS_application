@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
 
-                    android:text="Groupe"
+                    android:text="@string/groupe"
 
                     android:onClick="onSelectType"/>
 
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
 
-                    android:text="Event"
+                    android:text="@string/event"
 
                     android:onClick="onSelectType"/>
 
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Personne"
+                    android:text="@string/personne"
 
                     android:onClick="onSelectType"/>
             </LinearLayout>
@@ -134,7 +134,7 @@
                 android:id="@+id/inputTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Rechercher"
+                android:hint="@string/rechercher"
                 android:ems="10"
                 android:textSize="20sp"
                 android:drawableLeft="@drawable/ic_search"
@@ -244,7 +244,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="showMenu"
-                    android:text="Menu"
+                    android:text="@string/menu"
                     android:textSize="35sp"
                     android:textStyle="bold"
                     android:layout_margin="5dp"/>
@@ -255,7 +255,7 @@
                     android:layout_margin="10dp"
                     android:drawableRight="@drawable/ic_right_arrow"
                     android:drawableEnd="@drawable/ic_right_arrow"
-                    android:text="Groupe"
+                    android:text="@string/groupe"
                     android:textSize="20sp"
                     android:onClick="showGroupeMenu"/>
 
@@ -263,7 +263,7 @@
                     android:id="@+id/profilBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Profil"
+                    android:text="@string/profil"
                     android:layout_margin="10dp"
                     android:textSize="20sp"
                     android:onClick="startAccountActivity"/>
@@ -271,7 +271,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Evenement"
+                    android:text="@string/evenement"
                     android:layout_margin="10dp"
                     android:textSize="20sp"
                     android:drawableRight="@drawable/ic_right_arrow"
@@ -281,7 +281,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Parametres"
+                    android:text="@string/parametres"
                     android:layout_margin="10dp"
                     android:textSize="20sp"
                     android:drawableRight="@drawable/ic_right_arrow"
@@ -292,7 +292,7 @@
                     android:id="@+id/disconnectBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Deconnexion"
+                    android:text="@string/deconnexion"
                     android:layout_margin="10dp"
                     android:textSize="20sp"
                     android:onClick="onClickDisconnectFromMenu"/>

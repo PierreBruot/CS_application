@@ -23,7 +23,7 @@ public class OtherUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_other_user);
 
         user = ExternUserData.findUserById(getIntent().getIntExtra("User",-1));
-        if (user == null) Toast.makeText(this,"erreur lors du chargement",Toast.LENGTH_SHORT).show();
+        if (user == null) Toast.makeText(this, R.string.loading_error,Toast.LENGTH_SHORT).show();
         else {
             onCreateUser();
         }

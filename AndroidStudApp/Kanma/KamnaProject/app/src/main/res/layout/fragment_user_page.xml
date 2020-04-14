@@ -28,28 +28,28 @@
                     android:id="@+id/titleTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Prenom Nom"
+                    android:text="@string/prenom_nom"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/genreTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Genre"
+                    android:text="@string/genre"
                     android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/ageTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="20 ans"
+                    android:text="@string/_20_ans"
                     android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/emailTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="mail@mail.fr"
+                    android:text="@string/mail_mail_fr"
                     android:textSize="12sp" />
 
         </LinearLayout>
@@ -72,7 +72,7 @@
 
                 android:layout_weight="1"
 
-                android:text="Profil"
+                android:text="@string/profil"
 
 
                 android:onClick="onClickProfil"
@@ -89,7 +89,7 @@
 
                 android:layout_weight="1"
 
-                android:text="Groupes"
+                android:text="@string/groupes"
 
                 android:onClick="onClickGroup"
                 />
@@ -120,7 +120,7 @@
                 android:id="@+id/descriptionTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Description "
+                android:text="@string/description"
                 />
 
             <EditText
@@ -152,7 +152,7 @@
             android:id="@+id/evenementTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mes Groupes:"
+            android:text="@string/mes_groupes"
             android:textSize="24sp" />
 
         <HorizontalScrollView

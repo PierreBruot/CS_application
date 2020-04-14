@@ -125,7 +125,7 @@ public class NewGroupActivity extends AppCompatActivity implements SearchUserBox
                 }
             }).start();
 
-        }else Toast.makeText(this,"Le nom du groupe est un champ obligatoire",Toast.LENGTH_LONG).show();
+        }else Toast.makeText(this, R.string.error_group_field_isEmpty,Toast.LENGTH_LONG).show();
 
     }
     public void onValidateConfirm(int id){
@@ -139,7 +139,7 @@ public class NewGroupActivity extends AppCompatActivity implements SearchUserBox
             startActivity(myIntent);
             this.finish();
 
-        }else Toast.makeText(this,"Desole une erreur est survenu, reessayez dans quelques instant",Toast.LENGTH_LONG).show();
+        }else Toast.makeText(this, R.string.error_try_later,Toast.LENGTH_LONG).show();
 
     }
 
@@ -234,7 +234,7 @@ public class NewGroupActivity extends AppCompatActivity implements SearchUserBox
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ChoosePicture.fromGallery(this);
             } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permission_denied,Toast.LENGTH_SHORT).show();
             }
         } else if (requestCode == 402) {
             if (grantResults.length == 0 || grantResults == null) {
@@ -242,7 +242,7 @@ public class NewGroupActivity extends AppCompatActivity implements SearchUserBox
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ChoosePicture.fromCamera(this);
             } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                Toast.makeText(this,"Permission Denied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permission_denied,Toast.LENGTH_SHORT).show();
             }
         }
     }

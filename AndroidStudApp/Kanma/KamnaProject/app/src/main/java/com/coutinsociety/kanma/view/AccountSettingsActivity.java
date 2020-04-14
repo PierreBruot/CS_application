@@ -202,7 +202,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
         }
         else{
 
-            Toast.makeText(this, "Rien a modifier", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.inform_nothing_to_edit, Toast.LENGTH_LONG).show();
 
             finish();
         }
@@ -220,6 +220,6 @@ public class AccountSettingsActivity extends AppCompatActivity {
 
             finish();
         }
-        else Toast.makeText(this, "Vous avez rencontré une erreur, reesayez dans quelques temps", Toast.LENGTH_LONG).show();
+        else Toast.makeText(this, R.string.inform_error_try_later, Toast.LENGTH_LONG).show();
     }
 }

@@ -47,7 +47,7 @@
                     android:id="@+id/titleTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pseudo"
+                    android:text="@string/pseudo"
                     android:textSize="36sp" />
 
 
@@ -55,14 +55,14 @@
                     android:id="@+id/genreTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Genre"
+                    android:text="@string/genre"
                     android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/ageTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="20 ans"
+                    android:text="@string/_20_ans"
                     android:textSize="12sp" />
 
 
@@ -94,7 +94,7 @@
                         android:id="@+id/descriptionTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Description "
+                        android:text="@string/description"
                         />
 
                     <EditText

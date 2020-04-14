@@ -45,7 +45,7 @@ android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="17sp"
-        android:text="Creer un groupe pour pouvoir publier des evenements public ou de groupe. Inviter uniquement les organisateur de votre groupe ou vos amis. Vous etes par defaut administrateur du groupe et vous pouvez l'editer à tous moment."/>
+        android:text="@string/creer_un_groupe_pour_pouvoir_publier_des_evenements_public_ou_de_groupe_inviter_uniquement_les_organisateur_de_votre_groupe_ou_vos_amis_vous_etes_par_defaut_administrateur_du_groupe_et_vous_pouvez_l_editer_tous_moment"/>
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -78,7 +78,7 @@ android:padding="16dp"
                 android:id="@+id/editGroupName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Nom du groupe"
+                android:hint="@string/nom_du_groupe"
                 android:inputType="textPersonName"
                 android:maxWidth="300dp"
                 android:minWidth="180sp"
@@ -98,7 +98,7 @@ android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_add_member"
-            android:text="Inviter"
+            android:text="@string/inviter"
             android:drawableEnd="@drawable/ic_add_member"
             android:layout_marginBottom="16dp"
 
@@ -115,7 +115,7 @@ android:padding="16dp"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Editer la description :"
+            android:text="@string/editer_la_description"
             android:textSize="20sp"/>
 
         <ScrollView

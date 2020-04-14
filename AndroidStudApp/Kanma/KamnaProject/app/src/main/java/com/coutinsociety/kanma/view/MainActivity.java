@@ -435,13 +435,13 @@ public class MainActivity extends AppCompatActivity implements GoogleMap.OnInfoW
         KanmaAlertDialog alertDialog=new KanmaAlertDialog(this);
         alertDialog.setTitle("Connexion requise");
         alertDialog.setMessage("Pour acceder a cette fonctionnalite vous devez creer un compte");
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Creer un compte",
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.create_account),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         startAccountActivity(null);
                     }
                 });
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Plus tard",
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.later),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -461,7 +461,7 @@ public class MainActivity extends AppCompatActivity implements GoogleMap.OnInfoW
                         startCreateGroupActivity(null);
                     }
                 });
-        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Plus tard",
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.later),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -494,7 +494,7 @@ public class MainActivity extends AppCompatActivity implements GoogleMap.OnInfoW
             mMap.setMyLocationEnabled(true);
 
         }catch (Exception e){
-            Toast.makeText(this,"Cannot get location"+e,Toast.LENGTH_LONG).show();
+            Toast.makeText(this,getString(R.string.cannot_get_location)+e,Toast.LENGTH_LONG).show();
         }
 
         LatLng plateauDeMoulon=new LatLng(48.7009,2.1749);
@@ -945,7 +945,7 @@ public class MainActivity extends AppCompatActivity implements GoogleMap.OnInfoW
     public void onDisconnect(){
         UserData.removeCurrentUser();
         updateUserRightUI();
-        Toast.makeText(this,"Vous avez été déconnecté",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.you_have_been_log_off,Toast.LENGTH_LONG).show();
     }
 
     @Override

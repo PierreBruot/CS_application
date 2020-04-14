@@ -54,19 +54,19 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Publier par " />
+                    android:text="@string/publier_par" />
                 <TextView
                     android:id="@+id/author"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="moi-même" />
+                    android:text="@string/moi_m_me" />
             </LinearLayout>
             <Button
                 android:id="@+id/btnChooseAuthor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onClickChooseAuthor"
-                android:text="Publier avec un de mes groupes"/>
+                android:text="@string/publier_avec_un_de_mes_groupes"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -80,7 +80,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Title"
+                    android:hint="@string/title"
                     android:inputType="textPersonName"
                     android:textSize="20sp" />
 
@@ -102,7 +102,7 @@
                     android:id="@+id/dateField"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date"
+                    android:text="@string/date"
                     />
 
             </LinearLayout>
@@ -123,7 +123,7 @@
                     android:id="@+id/locationField"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lieu"
+                    android:text="@string/lieu"
                     />
 
             </LinearLayout>
@@ -137,7 +137,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Visibilité de l'evenement :"
+                    android:text="@string/visibilit_de_l_evenement"
                     android:textSize="20sp"
                     android:textStyle="bold|italic" />
 
@@ -151,21 +151,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Public" />
+                        android:text="@string/groupe_public" />
 
                     <RadioButton
                         android:id="@+id/visibilityCustom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Custom" />
+                        android:text="@string/custom" />
                 </RadioGroup>
             </FrameLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Liste des invités:"/>
+                android:text="@string/liste_des_invit_s"/>
 
             <Button
                 android:id="@+id/addUser"
@@ -195,7 +195,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_gravity="bottom"
-            android:text="Valider"
+            android:text="@string/valider"
             android:onClick="onClickCreateEvent"
             />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

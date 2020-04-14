@@ -33,7 +33,7 @@ public class CalendarWithEventsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendar_with_events);
 
         //events = GroupData.findConversationById(getIntent().getIntExtra("Groupe",-1)).getAllEvents();
-        if (events == null) Toast.makeText(this,"erreur lors du chargement",Toast.LENGTH_SHORT).show();
+        if (events == null) Toast.makeText(this, R.string.loading_error, Toast.LENGTH_SHORT).show();
 
         Collections.sort(events, new Comparator<Event>(){
             public int compare(Event o1, Event o2){

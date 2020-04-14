@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Nom"
+                    android:hint="@string/nom"
                     android:inputType="textPersonName"
                     android:textSize="20sp" />
 
@@ -74,7 +74,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Prenom"
+                    android:hint="@string/prenom"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:textSize="20sp"
@@ -92,7 +92,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
+                    android:hint=
+                        "@string/email"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:textSize="20sp"
@@ -110,7 +111,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Description"
+                    android:hint="@string/description"
                     android:ems="10"
                     android:inputType="textLongMessage"
                     android:textSize="20sp"
@@ -128,7 +129,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Ancien mot de passe"
+                    android:hint="@string/ancien_mot_de_passe"
                     android:ems="10"
                     android:inputType="textPassword"
                     android:textSize="20sp"
@@ -146,7 +147,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Choix mot de passe"
+                    android:hint="@string/choix_mot_de_passe"
                     android:ems="10"
                     android:inputType="textPassword"
                     android:textSize="20sp"
@@ -164,7 +165,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Confirmer votre mot de passe"
+                    android:hint="@string/confirmer_votre_mot_de_passe"
                     android:ems="10"
                     android:inputType="textPassword"
                     android:textSize="20sp"
@@ -194,7 +195,7 @@
 
             android:layout_weight="1"
 
-            android:text="Disconnect"
+            android:text="@string/disconnect"
 
             />
 
@@ -206,7 +207,7 @@
             android:onClick="onClickDeleteAccount"
             android:layout_weight="1"
 
-            android:text="Delete Account"
+            android:text="@string/delete_account"
 
             />
 

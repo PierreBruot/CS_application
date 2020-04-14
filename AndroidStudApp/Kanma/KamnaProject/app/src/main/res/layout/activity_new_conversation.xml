@@ -38,7 +38,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Redigez votre message d'invitation :"
+            android:text="@string/redigez_votre_message_d_invitation"
 
             android:textSize="16sp"
             android:layout_margin="5dp"/>
@@ -51,7 +51,7 @@
             android:inputType="textMultiLine"
             android:lines="10"
             android:maxLines="10"
-            android:text="Bonjour, bienvenue sur mon groupe !"
+            android:text="@string/bonjour_bienvenue_sur_mon_groupe"
             android:scrollbars="vertical"
             android:minHeight="100dp"
             />
@@ -75,7 +75,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Confirmer et envoyer"
+            android:text="@string/confirmer_et_envoyer"
             android:layout_gravity="start|center_vertical"
 
             />
@@ -124,7 +124,7 @@
                     android:drawableStart="@drawable/ic_search"
                     android:drawableLeft="@drawable/ic_search"
                     android:ems="10"
-                    android:hint="Rechercher personne ou groupe"
+                    android:hint="@string/rechercher_personne_ou_groupe"
                     android:inputType="textPersonName"
                     android:textSize="20sp"
                     android:layout_marginEnd="10dp" />
@@ -156,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="selectGroup"
-                        android:text="Mes Conversations" />
+                        android:text="@string/mes_conversations" />
 
 
                     <Button
@@ -164,7 +164,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="selectUser"
-                        android:text="Personne" />
+                        android:text="@string/personne" />
                 </LinearLayout>
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
