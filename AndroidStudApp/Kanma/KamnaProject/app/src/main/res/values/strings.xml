@@ -12,14 +12,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mainService">mainService</string>
-    <string name="groupe">Groupe</string>
-    <string name="nom">Nom</string>
-    <string name="prenom">Prenom</string>
     <string name="email">Email</string>
-    <string name="description">Description</string>
     <string name="ancien_mot_de_passe">Ancien mot de passe</string>
-    <string name="choix_mot_de_passe">Choix mot de passe</string>
-    <string name="confirmer_votre_mot_de_passe">Confirmer votre mot de passe</string>
     <string name="disconnect">Disconnect</string>
     <string name="delete_account">Delete Account</string>
     <string name="titre_de_l_event">Titre de l\'event</string>
@@ -34,15 +28,9 @@
     <string name="description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description_description">Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</string>
     <string name="proposer_un_covoiturage">Proposer un covoiturage</string>
     <string name="erreur">Erreur</string>
-    <string name="description">Description</string>
-    <string name="groupe">Groupe</string>
     <string name="event">Event</string>
-    <string name="personne">Personne</string>
     <string name="rechercher">Rechercher</string>
     <string name="groupe">Groupe</string>
-    <string name="profil">Profil</string>
-    <string name="evenement">Evenement</string>
-    <string name="parametres">Parametres</string>
     <string name="deconnexion">Deconnexion</string>
     <string name="redigez_votre_message_d_invitation">Redigez votre message d\'invitation :</string>
     <string name="bonjour_bienvenue_sur_mon_groupe">Bonjour, bienvenue sur mon groupe !</string>
@@ -66,9 +54,6 @@
     <string name="editer_la_description">Editer la description :</string>
     <string name="you_are_not_connecting_to_internet">You are not connecting to internet</string>
     <string name="pseudo">Pseudo</string>
-    <string name="genre">Genre</string>
-    <string name="_20_ans">20 ans</string>
-    <string name="description">Description</string>
     <string name="choose">Choose</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
@@ -81,7 +66,6 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
-    <string name="sign_up">Sign Up</string>
     <string name="choix_du_nom_d_utilisateur">Choix du nom d\'utilisateur</string>
     <string name="prenom">Prenom</string>
     <string name="nom">Nom</string>
@@ -115,21 +99,14 @@
     <string name="nous_contacter">Nous contacter</string>
     <string name="inform_nothing_to_edit">Rien a modifier</string>
     <string name="inform_error_try_later">Vous avez rencontré une erreur, reesayez dans quelques temps</string>
-    <string name="loading_error">erreur lors du chargement</string>
-    <string name="loading_error">erreur lors du chargement</string>
-    <string name="loading_error">erreur lors du chargement</string>
     <string name="create_account">Creer un compte</string>
-    <string name="later">Plus tard</string>
     <string name="later">Plus tard</string>
     <string name="cannot_get_location">Cannot get location</string>
     <string name="you_have_been_log_off">Vous avez été déconnecté</string>
     <string name="element_not_found">Aucun element trouve</string>
     <string name="permission_denied">Permission Denied</string>
-    <string name="permission_denied">Permission Denied</string>
     <string name="error_group_field_isEmpty">Le nom du groupe est un champ obligatoire</string>
     <string name="error_try_later">Desole une erreur est survenu, reessayez dans quelques instant</string>
-    <string name="permission_denied">Permission Denied</string>
-    <string name="permission_denied">Permission Denied</string>
     <string name="loading_error">erreur lors du chargement</string>
     <string name="login_or_password_invalid">Login ou mot de passe incorrect</string>
     <string name="name_and_password_required">Le nom d\'utilisateur et le mot de passe sont obligatoires</string>
@@ -137,6 +114,4 @@
     <string name="fill_in_all_fields">Remplissez tous les champ</string>
     <string name="error_check_your_connection_or_retry_later">Vous avez rencontré une erreur, verifiez votre connexion ou reesayez dans quelques temps</string>
     <string name="error">erreur</string>
-    <string name="permission_denied">Permission Denied</string>
-    <string name="permission_denied">Permission Denied</string>
 </resources>
